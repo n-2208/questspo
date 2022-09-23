@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ScreenWarapper" id="Wrap">
+
+        <div class="LeftPannel">
+            <h3 style="color: #fff; font-size: 32px; margin: 10px" id="OsnQuest"> _ _ _ _   _ - Открыл первую школу математики и навигационных наук. <br> <br>Именно _ _ _ _ принято считать точкой отсчёта истории СПО</h3>
+        </div>
+        
+
+        <div class="Questpannel">
+
+            <div class="ModalWindowWrapper">
+                <div class="Window" id="11">
+                    <div class="Text">
+                        Назовите год создания 
+                        Чувашского республиканского училища культуры(1945)
+                        <input type="text" id="input1" name="" id="" placeholder="Ответ" maxlength="4">
+                    </div>
+                </div>
+
+                <div class="Window" id="12">
+                    <div class="Text">
+                        В каком городе был отрыт фелиал МГЭУ в 1997 году(Чебоксары)
+                        <input type="text" id="input2" name="" id="" placeholder="Ответ" maxlength="9">
+                    </div>
+                </div>
+
+                <div class="Window" id="13">
+                    <div class="Text">
+                        Сколько направлений есть в Чебоксарском Медецинском колледже  (6)
+                        <input type="text" id="input3" name="" id="" placeholder="Ответ" maxlength="1">
+                    </div>
+                </div>
+
+                <div class="Window" id="14">
+                    <div class="Text">
+                        Это Чебоксарский профессиональный колледж Н. В. (Никольского)
+                        <input type="text" id="input4" name="" id="" placeholder="Ответ" maxlength="11">
+                    </div>
+                </div>
+
+                <div class="Window" id="15">
+                    <div class="Text">
+                        Постановление о открытии Чебоксарского кооперативного техникума от (29.10.1929)
+                        <input type="text" id="input5" name="" id="" placeholder="_ _ . _ _ . _ _ _ _ " maxlength="10">
+                    </div>
+                </div>
+
+                <div class="Window" id="16">
+                    <div class="Text">
+                        Первым директором 1 корпуса ЧЭМТ был (В.С. Шепелев) 
+                        <input type="text" id="input6" name="" id="" placeholder="Ответ" maxlength="12">
+                    </div>
+                </div>
+
+                <div class="Window" id="17">
+                    <div class="Text">
+                        25 сентября _ _ _ _ года приказом № 483 Народного Комиссариата Текстильной Промышленности СССР был образован Вечерний Текстильный Техникум. (1942)
+                        <input type="text" id="input7" name="" id="" placeholder="Ответ" maxlength="4">
+                    </div>
+                </div>
+
+                <div class="Window" id="18">
+                    <div class="Text">
+                        Чебоксарский планово-экономический техникум был образован Приказом № __(48)
+                        <input type="text" id="input8" name="" id="" placeholder="Ответ" maxlength="2">
+                    </div>
+                </div>
+
+                <div class="Window" id="19">
+                    <div class="Text">
+                        Сокращенное наименование Чебоксарского техникума строительства и городского хозяйства (ГАПОУ ЧР "ЧТСГХ")
+                        <input type="text" id="input9" name="" id="" placeholder="Ответ" maxlength="16">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="Circle" id="1" style="position: relative; left: 500px; top: 595px;" onclick="OpenQuestion(1)">
+            </div> <!--1-->
+            
+            <div class="Circle" id="2" style="position: relative; left: 570px; top: 585px;" onclick="OpenQuestion(2)">
+
+            </div> <!--2-->
+
+            <div class="Circle" id="3" style="position: relative; left: 587px; top: 366px;" onclick="OpenQuestion(3)">
+
+            </div> <!--3-->
+
+            <div class="Circle" id="4" style="position: relative; left: 637px; top: 306px;" onclick="OpenQuestion(4)">
+
+            </div> <!--4-->
+
+            <div class="Circle" id="5" style="position: relative; left: 727px; top: 246px;" onclick="OpenQuestion(5)">
+
+            </div> <!--5-->
+
+            <div class="Circle" id="6" style="position: relative; left: 877px; top: 371px;" onclick="OpenQuestion(6)">
+
+            </div> <!--6-->
+
+            <div class="Circle" id="7" style="position: relative; left: 1000px; top: 224px;" onclick="OpenQuestion(7)">
+
+            </div> <!--7-->
+
+            <div class="Circle" id="8" style="position: relative; left: 950px; top: 510px;" onclick="OpenQuestion(8)">
+
+            </div> <!--8-->
+
+            <div class="Circle" id="9" style="position: relative; left: 880px; top: 365px;" onclick="OpenQuestion(9)">
+
+            </div> <!--9-->
+        </div>
+
+
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script defer>
+
+
+    LP = document.querySelector( "#Wrap > div.LeftPannel");
+    //console.log("Ширина ",LP.offsetWidth)
+
+    $("#2").hide();
+    $("#3").hide();
+    $("#4").hide();
+    $("#5").hide();
+    $("#6").hide();
+    $("#7").hide();
+    $("#8").hide();
+    $("#9").hide();
+
+    Circle = document.querySelectorAll('.Circle');
+    var index = 0, length = Circle.length;
+
+    /*
+        var rect = element.getBoundingClientRect();
+        console.log(rect.top, rect.right, rect.bottom, rect.left);
+    */
+
+    for ( ; index < length; index++)
+    {
+        let rect = Circle[index].getBoundingClientRect();
+        //console.log("Позиция слева -",rect.left,"Позиция сверху -",rect.top);
+    };
+
+    function OpenQuestion(Number)
+    {
+        //$(Question).show();
+        let ID = "#1" + Number;
+        $(ID).show();
+        
+    }
+
+    function CloseQuestion(Number)
+    {
+        
+        let ID = "#1" + Number;
+        $(ID).hide();
+        
+    }
+
+    //Задание 1
+    let input1 = document.querySelector("#input1");
+    input1.addEventListener('input', updateValue)
+
+    //Задание 2
+    let input2 = document.querySelector("#input2");
+    input2.addEventListener('input', updateValue)
+
+    //Задание 3
+    let input3 = document.querySelector("#input3");
+    input3.addEventListener('input', updateValue)
+
+    //Задание 4
+    let input4 = document.querySelector("#input4");
+    input4.addEventListener('input', updateValue)
+
+    //Задание 5
+    let input5 = document.querySelector("#input5");
+    input5.addEventListener('input', updateValue)
+
+    //Задание 6
+    let input6 = document.querySelector("#input6");
+    input6.addEventListener('input', updateValue)
+
+    //Задание 7
+    let input7 = document.querySelector("#input7");
+    input7.addEventListener('input', updateValue)
+
+    //Задание 8
+    let input8 = document.querySelector("#input8");
+    input8.addEventListener('input', updateValue)
+
+    //Задание 8
+    let input9 = document.querySelector("#input9");
+    input9.addEventListener('input', updateValue)
+
+
+    function updateValue(e) {
+        console.log(e.target.value);
+
+        if (e.target.value == 1945)
+        {
+            CloseQuestion(1);
+            document.getElementById("OsnQuest").innerHTML = "П _ _ _ _ - Открыл первую школу математики и навигационных наук. Именно _ _ _ _ принято считать точкой отсчёта истории СПО";
+            $("#2").show();
+        }
+        else if (e.target.value == "Чебоксары")
+        {
+            CloseQuestion(2);
+            document.getElementById("OsnQuest").innerHTML = "П E _ _ _ - Открыл первую школу математики и навигационных наук. Именно _ _ _ _ принято считать точкой отсчёта истории СПО";
+            $("#3").show();
+        } else if (e.target.value == 6)
+        {
+            CloseQuestion(3);
+            document.getElementById("OsnQuest").innerHTML = "П E Т _ _ - Открыл первую школу математики и навигационных наук. Именно _ _ _ _ принято считать точкой отсчёта истории СПО";
+            $("#4").show();
+        } else if (e.target.value == "Никольского")
+        {
+            CloseQuestion(4);
+            document.getElementById("OsnQuest").innerHTML = "П E Т Р _ - Открыл первую школу математики и навигационных наук. Именно _ _ _ _ принято считать точкой отсчёта истории СПО";
+            $("#5").show();
+        } else if (e.target.value == "29.10.1929")
+        {
+            CloseQuestion(5);
+            document.getElementById("OsnQuest").innerHTML = "П E Т Р 1 - Открыл первую школу математики и навигационных наук. Именно _ _ _ _ принято считать точкой отсчёта истории СПО";
+            $("#6").show();
+        } else if (e.target.value == "В.С. Шепелев")
+        {
+            CloseQuestion(6);
+            document.getElementById("OsnQuest").innerHTML = "П E Т Р 1 - Открыл первую школу математики и навигационных наук. Именно 1 _ _ _ принято считать точкой отсчёта истории СПО";
+            $("#7").show();
+        } else if (e.target.value == 1942)
+        {
+            CloseQuestion(7);
+            document.getElementById("OsnQuest").innerHTML = "П E Т Р 1 - Открыл первую школу математики и навигационных наук. Именно 1 7 _ _ принято считать точкой отсчёта истории СПО";
+            $("#8").show();
+        } else if (e.target.value == 48)
+        {
+            CloseQuestion(8);
+            document.getElementById("OsnQuest").innerHTML = "П E Т Р 1 - Открыл первую школу математики и навигационных наук. Именно 1 7 0 _ принято считать точкой отсчёта истории СПО";
+            $("#9").show();
+        } else if (e.target.value == "ГАПОУ ЧР ЧТСГХ")
+        {
+            CloseQuestion(9);
+            document.getElementById("OsnQuest").innerHTML = "П E Т Р 1 - Открыл первую школу математики и навигационных наук. Именно 1 7 0 1 принято считать точкой отсчёта истории СПО";
+        }
+    }
+
+    
+    
+    
+
+</script>
+
+</html>
